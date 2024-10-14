@@ -26,53 +26,55 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="w-screen flex justify-center items-center h-screen bg-custom bg-cover bg-center">
-            <div className="flex w-4/5 max-w-screen-sm max-h-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className='main-container'>
+            <div className='secondary-container'>
                 {/* Columna izquierda (Bienvenida) */}
-                <div className="w-1/2 bg-gray-100 p-8 flex flex-col justify-center items-center">
-                    <h2 className="text-3xl font-bold mb-4 text-center">BIENVENIDO A COLLECTORD</h2>
-                    <p className="text-gray-700 text-center mb-8">
+                <div className='left-container'>
+                    <h2 className="text-3xl font-bold mb-4 text-center">BIENVENIDO <br />A<br /> COLLECTORD</h2>
+                    <p className="text-gray-700 text-center mb-6">
                         CollectoRD es una iniciativa que surge para colaborar con el medio ambiente, esta
                         iniciativa permite que puedas conectar con autoridades o personas para limpiar el futuro del país.
                     </p>
-                    <p className="text-gray-700 text-center mb-4">
+                    <p className='register-text mb-4'>
                         ¿No tienes una cuenta? <br />
                         <span className="font-bold">¡Vamos regístrate!</span>
                     </p>
-                    <div className="flex space-x-4">
+                    <div className="flex -space-x-3">
                         <Link to='/registerInstitution'>
-                            <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Institución</button>
+                            <button className="bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700">Institución</button>
                         </Link>
 
                         <Link to='/registerUser'>
-                            <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Persona</button>
+                            <button className="bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700">Persona</button>
                         </Link>
                     </div>
                 </div>
 
                 {/* Columna derecha (Formulario de inicio de sesión) */}
-                <div className="w-1/2 p-8 m-5 min-w-max ">
-                    <h2 className="text-2xl font-bold mb-6 text-center">Iniciar Sesión</h2>
-                    <form onSubmit={handleLogin} className="space-y-5">
+                <div className='right-container'>
+                    <h2 className='text-2xl font-bold mb-6 text-center'>Iniciar Sesión</h2>
+                    <form onSubmit={handleLogin} className='space-y-5'>
                         <InputField
-                            label="Correo electrónico"
+                            style={'w-full'}
+                            label='Correo electrónico'
                             type='email'
-                            value={email}
+                            value={email || ''}
                             onChange={(e) => setEmail(e.target.value)}
                             floatingLabel={true}
                         />
                         <InputField
-                            label="Contraseña"
+                            style={'w-full'}
+                            label='Contraseña'
                             type='password'
-                            value={password}
+                            value={password || ''}
                             onChange={(e) => setPassword(e.target.value)}
                             floatingLabel={true}
                         />
-                        <button type="submit" className="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                        <button type='submit' className='w-full py-2 login-btn text-white rounded hover:bg-green-700'>
                             Inicia Sesión
                         </button>
-                        <p className="text-right">
-                            <a href="/forgot-password" className="text-sm font-bold text-green-600 hover:underline">
+                        <p className='text-right'>
+                            <a href='/forgot-password' className='text-sm font-bold forgetPasswordText hover:underline'>
                                 ¿Olvidaste tu contraseña?
                             </a>
                         </p>

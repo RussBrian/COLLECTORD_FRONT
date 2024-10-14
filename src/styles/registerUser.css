@@ -1,6 +1,7 @@
+/*registerUser.css*/
 .aside-background {
     background-image: url('https://s3-alpha-sig.figma.com/img/9821/6e6f/92d0b2d7af70804418a2d57a17273c3e?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lF7PV4Ct4Yzh8jOR2AAAWVhqkuKV5hwTRantl6G9DJ-TTUwRLMgrLAVsvSLMG0GMWmb1C2aBaa2AKWDQxpXaIxFfO8-T8xFwXo~5ZVcVQARy-TjfMc-56sNuVDcK8uL74cpCGr~B0NdKUscQq5G9YF3-XDdmG5MyGtSwfc2~jKg2A8HVf5lvbWtSZXJ2jild4gudRBlj4vFU57WNw-jHZ4i34-BZmS31xgF580gu6f55rWpjag63qYFf6ugdbFF76XN8Ap18evwa9lo7I1Xe9ULFKEqaLRl1FzV95YkS1DeN~zOxm3Qt0EEBH7lrg0-Z0u7LMQLl23D-uxB-C2NjSQ__');
-    background-size: cover; /* Asegura que la imagen cubra todo el área */
-    background-position: center; /* Centra la imagen */
-    height: 100%; /* O ajusta la altura según sea necesario */
+    
+    @apply bg-cover bg-center h-screen right-0 top-0 w-1/3 lg:w-1/4 fixed   ;
 }
+
