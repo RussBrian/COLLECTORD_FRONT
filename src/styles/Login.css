@@ -1,37 +1,48 @@
 .bg-custom {
     /* background-image: url('https://s3-alpha-sig.figma.com/img/e0ec/223a/e517fc783f589349547c46d78fd5b8b0?Expires=1728864000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=g9sHoMOFJt6S9~AU~1WsUSelv~2AeKnN7cnK-jxEQ6spUk7fRfjj9nqTCctt5dtokhkymZ5Q73Lxgyx-W3-E2iAAQlosdMhC6fYBkDerNCkbINHtPgeeJvogTvWrS3k6NTnQWwCCE9fCxLq~r3a9uAbzniiHmqCaVHt5eeKJAlQ3k78G8MMkyUsUrGvAI2huThPTLhef~SAQpswoii2VXpYvDiTZ3rujb7ai~21aVwdoybX9i0bWFQQXvupIk2zrMwsTGBPcChYAv0h72eZspmvj16U0Q8oJS-h6tsfcgrfx75SWhAQDhyrHKgOntk~CXpDsQ~kp690eUueXGwLKWw__'); */
-    @apply bg-bgUserForm h-screen bg-center bg-cover
+    @apply bg-bgUserForm h-screen bg-center bg-cover;
 }
 
-.main-container {
+.login-container {
     @apply w-screen flex justify-center items-center h-screen bg-custom bg-cover bg-center;
 }
 
 .secondary-container {
-    @apply flex w-4/5 max-w-screen-sm max-h-full login-container rounded-lg shadow-lg overflow-hidden;
+    @apply flex w-4/5 max-w-screen-sm max-h-full login-color rounded-lg shadow-lg overflow-hidden;
 }
 
 .left-container {
-
-    @apply w-1/2 login-container p-8 flex flex-col justify-center items-center border-r-2 border-bgBackLogin
+    @apply w-1/2 login-color p-8 flex flex-col justify-center items-center border-r-2 border-bgBackLogin;
 }
 
 .right-container {
-    @apply w-1/2 p-8 m-5 min-w-max
+    @apply w-1/2 p-8 m-5 min-w-max;
 }
 
-.login-container {
+.welcome-text{
+    @apply text-3xl font-bold mb-4 text-center;
+}
+.description-text {
+    @apply text-gray-700 text-center mb-6;
+}
+.login-color {
     @apply bg-bgColorLogin;
 }
-
+.login-text{
+    @apply text-2xl font-bold mb-6 text-center;
+}
 .register-text {
-    @apply font-bold text-gray-700 text-center;
+    @apply font-bold text-gray-700 text-center mb-4;
+}
+
+.register-btn {
+    @apply bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700;
 }
 
 .login-btn {
-    @apply bg-textGreen;
+    @apply bg-textGreen font-semibold w-full py-2 text-white rounded hover:bg-green-700;
 }
 
 .forgetPasswordText {
-    @apply text-forgotPasswordText
-}
+    @apply text-forgotPasswordText;
+}   

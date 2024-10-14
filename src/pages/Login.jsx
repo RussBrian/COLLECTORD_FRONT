@@ -26,33 +26,33 @@ const LoginPage = () => {
     };
 
     return (
-        <div className='main-container'>
+        <div className='login-container'>
             <div className='secondary-container'>
                 {/* Columna izquierda (Bienvenida) */}
                 <div className='left-container'>
-                    <h2 className="text-3xl font-bold mb-4 text-center">BIENVENIDO <br />A<br /> COLLECTORD</h2>
-                    <p className="text-gray-700 text-center mb-6">
+                    <h2 className='welcome-text'>BIENVENIDO <br />A<br /> COLLECTORD</h2>
+                    <p className='description-text'>
                         CollectoRD es una iniciativa que surge para colaborar con el medio ambiente, esta
                         iniciativa permite que puedas conectar con autoridades o personas para limpiar el futuro del país.
                     </p>
-                    <p className='register-text mb-4'>
+                    <p className='register-text'>
                         ¿No tienes una cuenta? <br />
-                        <span className="font-bold">¡Vamos regístrate!</span>
+                        <span className='font-bold'>¡Vamos regístrate!</span>
                     </p>
-                    <div className="flex -space-x-3">
+                    <div className='flex -space-x-3'>
                         <Link to='/registerInstitution'>
-                            <button className="bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700">Institución</button>
+                            <button className='register-btn'>Institución</button>
                         </Link>
 
                         <Link to='/registerUser'>
-                            <button className="bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700">Persona</button>
+                            <button className='register-btn'>Persona</button>
                         </Link>
                     </div>
                 </div>
 
                 {/* Columna derecha (Formulario de inicio de sesión) */}
                 <div className='right-container'>
-                    <h2 className='text-2xl font-bold mb-6 text-center'>Iniciar Sesión</h2>
+                    <h2 className='login-text'>Iniciar Sesión</h2>
                     <form onSubmit={handleLogin} className='space-y-5'>
                         <InputField
                             style={'w-full'}
@@ -70,7 +70,7 @@ const LoginPage = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             floatingLabel={true}
                         />
-                        <button type='submit' className='w-full py-2 login-btn text-white rounded hover:bg-green-700'>
+                        <button type='submit' className='login-btn'>
                             Inicia Sesión
                         </button>
                         <p className='text-right'>
