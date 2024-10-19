@@ -1,6 +1,6 @@
 /*registerForm.css*/
 .custom-step {
-    @apply text-textGreen font-bold pl-4 sm:pl-16 md:pl-7 lg:pl-6 mb-2 sm:mr-28 md:mr-20 lg:mr-12 xl:mr-28;
+    @apply text-textGreen font-bold pl-4 sm:pl-16 md:pl-7 lg:pl-6 mb-2 sm:mr-28 md:mr-20 lg:mr-28 xl:mr-28;
 }
 
 .custom-progress-bar {
@@ -10,7 +10,9 @@
 .custom-content-bar {
     @apply h-full bg-green-500 rounded-full;
 }
-
+.back-to-login-btn {
+    @apply flex text-left text-gray-300 text-xl font-bold mb-4 mx-auto sm:mx-12 md:mx-2 lg:mx-2 xl:-mx-0;
+}
 .main-container {
     @apply flex justify-between items-center h-screen bg-bgUserForm;
 }
@@ -31,19 +33,28 @@
     content: '*';
     @apply text-red-500 mr-1;
 }
+.custom-message-required {
+    @apply text-textGreen font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mt-10;
+}
 
+.custom-message-required::before {
+    content: '*';
+    @apply text-red-500 mr-1;
+}
 .custom-message {
-    @apply text-textGreen font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mb-2;
+    @apply text-textGreen font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mb-7;
 }
 
 .custom--password-message {
     @apply text-bgPasswordTextColor font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mb-2;
 }
 
-;
+.custom-message-image {
+    @apply text-textGreen font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mb-10;
+}
 
 .custom-image-title {
-    @apply flex pl-8 text-gray-300 text-lg font-bold mb-6;
+    @apply flex pl-8 text-gray-300 text-lg font-bold mb-6 mx-auto sm:mx-12 md:mx-2 lg:mx-2 xl:-mx-0;
 }
 
 /* Para el contenedor del selector de imagen */
@@ -61,13 +72,6 @@
 /* Para la vista previa de la imagen (círculo) */
 .image-preview {
     @apply w-40 h-40 rounded-full bg-green-700 flex justify-center items-center mx-24 sm:mx-32 md:mx-28 mb-4;
-    /* 
-        w-36 y h-36 para el tamaño del círculo
-        rounded-full para hacerlo circular
-        bg-green-700 para el fondo verde
-        flex justify-center items-center para centrar el ícono
-        mx-auto para centrar el círculo en el contenedor
-    */
 }
 
 /* Para la imagen dentro del círculo */
@@ -97,11 +101,11 @@
 }
 
 .custom-next-Btn-apparience {
-    @apply bg-bgNextStepBtn hover:bg-green-500 font-bold;
+    @apply bg-bgNextStepBtn hover:bg-bgColorLogin hover:text-black border-4 border-bgNextStepBtn hover:border-4 hover:border-bgNextStepBtn font-bold;
 }
 
 .return-login-btn {
-    @apply w-full sm:w-1/2 md:w-2/5 lg:w-2/5 mx-20 sm:mx-36 md:mx-16 lg:mx-20 xl:mx-28 mt-6;
+    @apply w-full sm:w-1/2 md:w-2/5 lg:w-2/5 mx-20 sm:mx-36 md:mx-16 lg:mx-28 xl:mx-28 mt-6;
 }
 
 .return-login-btn-apparience {
