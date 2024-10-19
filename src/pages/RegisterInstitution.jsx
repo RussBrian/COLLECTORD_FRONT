@@ -1,37 +1,27 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { InputField } from "../components/ui/InputField.jsx";
 import { Button } from "../components/ui/Button.jsx";
 import { Link } from "../components/Link.jsx";
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import '../styles/registerForm.css';
-import '../styles/registerInstitution.css';  
+import '../styles/registerInstitution.css';
 
 
 
 const RegisterInstitution = () => {
+    const { control, handleSubmit } = useForm();
     const [step, setStep] = useState(1);
 
-    const [formData, setFormData] = useState({
-        institutionName: '',
-        institutionID: '',
-        address: '',
-        phone: '',
-        email: '',
-        website: '',
-        representative: '',
-        password: '',
-        confirmPassword: '',
-        logo: null,
-    });
 
-    const handleChange = (e) => {
+    /*const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
     const handleImageChange = (e) => {
         setFormData({ ...formData, logo: e.target.files[0] });
-    };
+    };*/
 
     const nextStep = (e) => {
         e.preventDefault();
@@ -47,14 +37,13 @@ const RegisterInstitution = () => {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
+    const handleFormSubmit = (data) => {
+        console.log(data);
     };
 
     const renderBackButton = () => {
         return (
-            <button className="flex text-left text-gray-300 text-xl font-bold mb-4" onClick={prevStep}>
+            <button className="back-to-login-btn" onClick={prevStep}>
                 <HiArrowSmallLeft className='text-3xl' />
                 Paso anterior
             </button>
@@ -70,21 +59,27 @@ const RegisterInstitution = () => {
                 </div>
 
                 {step === 1 && (
-                    <form>
+                    <form onSubmit={handleSubmit(nextStep)}>
                         <div className='flex'>
                             <h3 className='custom-step'>Paso 1-4</h3>
                             <h3 className='text-gray-500 font-bold'>Registrar Institución</h3>
                         </div>
-                        <label htmlFor='institutionName' className='custom-label'>Nombre de la Institución</label>
-                        <InputField style={'custom-input'} name="institutionName" value={formData.institutionName} onChange={handleChange} />
-                        <label htmlFor='institutionID' className='custom-label'>RNC de la  Institución</label>
-                        <InputField style={'custom-input'} name="institutionID" value={formData.institutionID} onChange={handleChange} />
-                        <label htmlFor='address' className='custom-label'>Representante</label>
-                        
-                        <InputField style={'custom-input'} name="address" value={formData.address} onChange={handleChange} />
-                        <div className='custom-message'>
-                            <p>No debe iniciar con un número.</p>
-                            <p>No debe tener espacios.</p>
+                        <Link to='/login'>
+                            <div>
+                                <button className=" back-to-login-btn" onClick={prevStep}>
+                                    <HiArrowSmallLeft className='text-3xl' />
+                                    Login
+                                </button>
+                            </div>
+                        </Link>
+                        <label className='custom-label'>Nombre de la Institución</label>
+                        <InputField control={control} name="institutionName" type="text" style={'custom-input'} />
+                        <label className='custom-label'>RNC de la  Institución</label>
+                        <InputField control={control} name="institutionID" type="text" style={'custom-input'} />
+                        <label className='custom-label'>Representante</label>
+                        <InputField control={control} name="address" type="text" style={'custom-input'} />
+                        <div>
+                            <p className='custom-message-required'>El campo es requerido.</p>
                         </div>
                         <div className='buttons-container'>
                             <Button className='custom-next-Btn custom-next-Btn-apparience' text="Siguiente" onClick={nextStep} />
@@ -100,18 +95,21 @@ const RegisterInstitution = () => {
                 )}
 
                 {step === 2 && (
-                    <form>
+                    <form onSubmit={handleSubmit(nextStep)}>
                         <div className='flex'>
                             <h3 className='custom-step'>Paso 2-4</h3>
                             <h3 className='text-gray-500 font-bold'>Registrar Institución</h3>
                         </div>
                         {renderBackButton()}
-                        <label htmlFor='email' className='custom-label'>Correo electrónico</label>
-                        <InputField style={'custom-input'} name="email" value={formData.email} onChange={handleChange} />
-                        <label htmlFor='phone' className='custom-label'>Teléfono</label>
-                        <InputField style={'custom-input'} name="phone" value={formData.phone} onChange={handleChange} />
-                        <label htmlFor='website' className='custom-label'>Dirección</label>
-                        <InputField style={'custom-input'} name="website" value={formData.website} onChange={handleChange} />
+                        <label className='custom-label'>Correo electrónico</label>
+                        <InputField control={control} name="email" type="email" style={'custom-input'} />
+                        <label className='custom-label'>Teléfono</label>
+                        <InputField control={control} name="phone" type="text" style={'custom-input'} />
+                        <label className='custom-label'>Dirección</label>
+                        <InputField control={control} name="webside" type="text" style={'custom-input'} />
+                        <div>
+                            <p className='custom-message-required'>El campo es requerido.</p>
+                        </div>
                         <div className='buttons-container'>
                             <Button className='custom-next-Btn custom-next-Btn-apparience' text="Siguiente" onClick={nextStep} />
                             <Link to='/login'>
@@ -126,22 +124,22 @@ const RegisterInstitution = () => {
                 )}
 
                 {step === 3 && (
-                    <form>
+                    <form onSubmit={handleSubmit(nextStep)}>
                         <div className='flex'>
                             <h3 className='custom-step'>Paso 3-4</h3>
                             <h3 className='text-gray-500 font-bold'>Registrar Institución</h3>
                         </div>
                         {renderBackButton()}
-                        <label htmlFor='password' className='custom-label'>Contraseña</label>
-                        <InputField style={'custom-input'} name="password" type="password" value={formData.password} onChange={handleChange} />
+                        <label className='custom-label'>Contraseña</label>
+                        <InputField control={control} name="password" type="password" style={'custom-input'} />
                         <div className='custom-message'>
                             <p>La contraseña debe contener al menos:</p>
-                            <p>1 letra, 8 caracteres, 1 número y 1 carácter <br/>especial (“@”,”!”,”#”,”.”)</p>
+                            <p>1 letra, 8 caracteres, 1 número y 1 carácter <br />especial (“@”,”!”,”#”,”.”)</p>
                         </div>
-                        <label htmlFor='confirmPassword' className='custom-label'>Confirmar Contraseña</label>
-                        <InputField style={'custom-input'} name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} />
-                        <div className='custom--password-message'>
-                            <p>Las contraseñas deben coincidir</p>
+                        <label className='custom-label'>Confirmar Contraseña</label>
+                        <InputField control={control} name="confirmPassword" type="password" style={'custom-input'} />
+                        <div>
+                            <p className='custom-message-required'>El campo es requerido.</p>
                         </div>
                         <div className='buttons-container'>
                             <Button className='custom-next-Btn custom-next-Btn-apparience' text="Siguiente" onClick={nextStep} />
@@ -157,7 +155,7 @@ const RegisterInstitution = () => {
                 )}
 
                 {step === 4 && (
-                    <form>
+                    <form onSubmit={handleSubmit(handleFormSubmit)}>
                         <div className='flex'>
                             <h3 className='custom-step'>Paso 4-4</h3>
                             <h3 className='text-gray-500 font-bold'>Registrar Institución</h3>
@@ -168,14 +166,14 @@ const RegisterInstitution = () => {
                             <p>Logo de la Institución</p>
                         </div>
                         <div className='image-selector-container'>
-                            <input className='image-input' type="file" onChange={handleImageChange} id='file-upload' />
+                            <InputField control={control} name="image" type="file" style={'image-input'} />
                             <label htmlFor='file-upload' className='image-upload-label'>
                                 <div className='image-preview'>
                                     <img src='https://s3-alpha-sig.figma.com/img/174f/fc64/f8ac827804aa101e61f2285c2c32962f?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qlAb4MZ8jmSnMvzBkLSeDjXYidgtSOdlWTQCx50nxk69Hn3BeMW4qkt68w0A6oZWJj~SVXDvQYJoKnbbjp47q3QE4lbcYgGmqtev4aqH91hA3DkcNHEbObPEYiwSo6MAhTJkoMPyH4Mr8e0j0xDtvZUuVLrxHO~LxLglgYLtnpTg-MlWEmNo0uC719u~TM633Qa0eSETlkNyJtjjI7pCyYW6ayH1VU~axSb1li7RcnlcepIv7QKyv8Hmt6yU4Ajg4mlqGAwaVt7gzhzMiSXb31Jv8Y5myV-WKBrRMIrhlgdMbMBx5cfMeXBMFUUrRZ0g2SMcB6qhvQT0qFazS8KrEw__' alt='Logo por defecto' />
                                 </div>
                             </label>
-                            <div className='custom-message'>
-                                <p>Puedes dar clic en el círculo para seleccionarn <br/> un logo o puedes dejar el avatar por defecto.</p>
+                            <div>
+                                <p className='custom-message-image'>Puedes dar clic en el círculo para seleccionarn <br /> un logo o puedes dejar el avatar por defecto.</p>
                             </div>
                         </div>
                         <div className='buttons-container'>
