@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
     const handleFormSubmit = (data) => {
         console.log("Datos del formulario:", data);
-        // Aquí iría la lógica para enviar el correo de restablecimiento de contraseña
+        
     };
 
     return (
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
                                         Volver al inicio
                                     </button>
                                 </div>
-                            </Link>
+                        </Link>
                     </div>
                 </form>
             </div>
