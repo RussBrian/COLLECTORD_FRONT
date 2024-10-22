@@ -36,7 +36,7 @@ const ForgotPassword = () => {
                     />
                     
                     <div>
-                        <p className='custom-message-required'>Ingresa el correo para recuperar tu contraseña.</p>
+                        <p className='custom-message'>Ingresa el correo para recuperar tu contraseña.</p>
                     </div>
 
                     <div className='buttons-container'>
