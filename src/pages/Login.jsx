@@ -29,7 +29,6 @@ const LoginPage = () => {
         }
     };
     
-
     return (
         <div className='login-container'>
             <div className='secondary-container'>
