@@ -19,42 +19,30 @@
     @apply w-1/2 p-8 m-5 min-w-max;
 }
 
-.welcome-text {
+.welcome-text{
     @apply text-3xl font-bold mb-4 text-center;
 }
-
 .description-text {
     @apply text-gray-700 text-center mb-6;
 }
-
 .login-color {
-    @apply bg-gray-200 backdrop-brightness-0;
+    @apply bg-bgColorLogin;
 }
-
-.login-text {
+.login-text{
     @apply text-2xl font-bold mb-6 text-center;
 }
-
-.login-input {
-    @apply w-full rounded-xl;
-}
-
 .register-text {
     @apply font-bold text-gray-700 text-center mb-4;
 }
 
 .register-btn {
-    @apply bg-textGreen text-white font-semibold py-1 px-3 rounded-l-lg border-4 border-bgBackLogin hover:bg-transparent hover:text-black;
-}
-
-.register-users-btn {
-    @apply bg-textGreen text-white font-semibold py-1 px-3 rounded-r-lg border-4 border-bgBackLogin hover:bg-transparent hover:text-black;
+    @apply bg-textGreen text-white font-semibold py-1 px-3 rounded-lg border-4 border-bgBackLogin hover:bg-green-700;
 }
 
 .login-btn {
-    @apply bg-textGreen font-bold w-full py-2 text-white rounded border-2 border-bgBackLogin hover:bg-transparent hover:text-black;
+    @apply bg-textGreen font-semibold w-full py-2 text-white rounded hover:bg-green-700;
 }
 
 .forgetPasswordText {
-    @apply text-sm font-bold text-forgotPasswordText hover:underline;
-}
+    @apply text-forgotPasswordText;
+}   
