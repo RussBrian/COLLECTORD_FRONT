@@ -82,7 +82,8 @@
 
 /* Para ocultar el input de archivo */
 .image-input {
-    @apply hidden;
+    @apply  hidden;
+
     /* Esconder el input original */
 }
 

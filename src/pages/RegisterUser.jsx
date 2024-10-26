@@ -11,16 +11,6 @@ const RegisterUser = () => {
     const { control, handleSubmit } = useForm();
     const [step, setStep] = useState(1);
 
-
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormData({ ...formData, [name]: value });
-    // };
-
-    // const handleImageChange = (e) => {
-    //     setFormData({ ...formData, image: e.target.files[0] });
-    // };
-
     const nextStep = (e) => {
         e.preventDefault();
         if (step < 4) {
@@ -71,11 +61,26 @@ const RegisterUser = () => {
                             </div>
                         </Link>
                         <label className='custom-label'>Nombre</label>
-                        <InputField control={control} name="name" type="text" style={'custom-input'} /*label="Nombre"*/ />
+                        <InputField 
+                        control={control} 
+                        name="name" 
+                        type="text" 
+                        style={'custom-input'} 
+                        />
                         <label className='custom-label'>Apellido</label>
-                        <InputField control={control} name="lastName" type="text" style={'custom-input'} /*label="Apellido"*/ />
+                        <InputField 
+                        control={control} 
+                        name="lastName" 
+                        type="text" 
+                        style={'custom-input'} 
+                        />
                         <label className='custom-label'>Nombre de usuario</label>
-                        <InputField control={control} name="userName" type="text" style={'custom-input'} /*label="Nombre de usuario"*/ />
+                        <InputField 
+                        control={control} 
+                        name="userName" 
+                        type="text" 
+                        style={'custom-input'}  
+                        />
                         <div>
                             <p className='custom-message-required'>El campo es requerido.</p>
                         </div>
@@ -100,11 +105,26 @@ const RegisterUser = () => {
                         </div>
                         {renderBackButton()}
                         <label className='custom-label'>Correo electrónico</label>
-                        <InputField control={control} name="email" type="email" style={'custom-input'} /*label="Correo Electrónico"*/ />
+                        <InputField 
+                        control={control} 
+                        name="email" 
+                        type="email" 
+                        style={'custom-input'}  
+                        />
                         <label htmlFor='identification' className='custom-label'>Cédula</label>
-                        <InputField control={control} name="identification" type="text" style={'custom-input'} /*label="Cédula"*/ />
+                        <InputField 
+                        control={control} 
+                        name="identification" 
+                        type="text" 
+                        style={'custom-input'}
+                        />
                         <label htmlFor='phone' className='custom-label'>Teléfono</label>
-                        <InputField control={control} name="phone" type="text" style={'custom-input'} /*label="Teléfono"*/ />
+                        <InputField 
+                        control={control} 
+                        name="phone" 
+                        type="text" 
+                        style={'custom-input'} 
+                        />
                         <div>
                             <p className='custom-message-required'>El campo es requerido.</p>
                         </div>
@@ -129,17 +149,24 @@ const RegisterUser = () => {
                         </div>
                         {renderBackButton()}
                         <label htmlFor='password' className='custom-label'>Contraseña</label>
-                        <InputField control={control} name="password" type="password" style={'custom-input'} /*label="Contraseña"*/ />
+                        <InputField 
+                        control={control} 
+                        name="password" 
+                        type="password" 
+                        style={'custom-input'} 
+                        />
                         <div className='custom-message'>
                             <p>La contraseña debe contener al menos:</p>
                             <p >1 letra, 8 caracteres, 1 número y 1 carácter <br />
                                 especial (“@”,”!”,”#”,”.”)</p>
                         </div>
                         <label htmlFor='password' className='custom-label'>Confirmar Contraseña</label>
-                        <InputField control={control} name="confirmPassword" type="password" style={'custom-input'} /*label="Confirmar Contraseña"*/ />
-                        {/* <div className='custom--password-message'>
-                            <p>Las contraseñas deben coincidir</p>
-                        </div> */}
+                        <InputField 
+                        control={control} 
+                        name="confirmPassword" 
+                        type="password" 
+                        style={'custom-input'} 
+                        />
                         <div>
                             <p className='custom-message-required'>El campo es requerido.</p>
                         </div>
@@ -167,7 +194,11 @@ const RegisterUser = () => {
                             <p>Foto de perfil</p>
                         </div>
                         <div className='image-selector-container'>
-                            <InputField control={control} name="image" type="file" style={'image-input'} />
+                            <InputField 
+                            control={control} 
+                            name="image" 
+                            type="file" 
+                            style={'image-input'} />
                             <label htmlFor='file-upload' className='image-upload-label'>
                                 <div className='image-preview'>
                                     <img src='https://s3-alpha-sig.figma.com/img/174f/fc64/f8ac827804aa101e61f2285c2c32962f?Expires=1729468800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qlAb4MZ8jmSnMvzBkLSeDjXYidgtSOdlWTQCx50nxk69Hn3BeMW4qkt68w0A6oZWJj~SVXDvQYJoKnbbjp47q3QE4lbcYgGmqtev4aqH91hA3DkcNHEbObPEYiwSo6MAhTJkoMPyH4Mr8e0j0xDtvZUuVLrxHO~LxLglgYLtnpTg-MlWEmNo0uC719u~TM633Qa0eSETlkNyJtjjI7pCyYW6ayH1VU~axSb1li7RcnlcepIv7QKyv8Hmt6yU4Ajg4mlqGAwaVt7gzhzMiSXb31Jv8Y5myV-WKBrRMIrhlgdMbMBx5cfMeXBMFUUrRZ0g2SMcB6qhvQT0qFazS8KrEw__' alt='Icono por defecto' />
