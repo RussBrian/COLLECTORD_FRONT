@@ -1,34 +1,29 @@
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { InputField } from "../components/ui/InputField.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
-//import { login } from "../services/authUsers.jsx";
-import { Link, navigate} from "../components/Link.jsx";
+import { login } from "../services/authUsers.jsx";
+import { Link } from "../components/Link.jsx";
 import '../styles/Login.css'
 
 const LoginPage = () => {
-
-    const { control, handleSubmit } = useForm();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const { dispatch } = useAuth();
 
-    const handleLogin = async (data) => {
+    const handleLogin = async (e) => {
+        e.preventDefault();
         try {
-            console.log(data);
-            // Simular datos de usuario con un rol fijo
-            const simulatedData = { user: { email: data.email }, role: "person" }; // Cambia "person" a "institution" según el rol de prueba
-    
-            dispatch({ type: 'LOGIN_SUCCESS', payload: simulatedData });
-    
-            // Redirige según el rol fijo asignado
-            if (simulatedData.role === 'institution') {
-                navigate('/institutionPage');
-            } else if (simulatedData.role === 'person') {
-                navigate('/personPage');
+            const data = await login(email, password);
+            dispatch({ type: 'LOGIN_SUCCESS', payload: { user: data.user, role: data.role } });
+            if (data.role === 'institution') {
+                // Redirigir al inicio de una institución
+            } else if (data.role === 'person') {
+                // Redirigir al inicio de una persona
             }
         } catch (error) {
             console.error('Error en el inicio de sesión', error);
         }
     };
-    
 
     return (
         <div className='login-container'>
@@ -44,13 +39,13 @@ const LoginPage = () => {
                         ¿No tienes una cuenta? <br />
                         <span className='font-bold'>¡Vamos regístrate!</span>
                     </p>
-                    <div className='flex -space-x-0'>
+                    <div className='flex -space-x-3'>
                         <Link to='/registerInstitution'>
                             <button className='register-btn'>Institución</button>
                         </Link>
 
                         <Link to='/registerUser'>
-                            <button className='register-users-btn'>Persona</button>
+                            <button className='register-btn'>Persona</button>
                         </Link>
                     </div>
                 </div>
@@ -58,31 +53,31 @@ const LoginPage = () => {
                 {/* Columna derecha (Formulario de inicio de sesión) */}
                 <div className='right-container'>
                     <h2 className='login-text'>Iniciar Sesión</h2>
-                    <form onSubmit={handleSubmit(handleLogin)} className='space-y-5'>
+                    <form onSubmit={handleLogin} className='space-y-5'>
                         <InputField
-                            control={control}
-                            name='email'
-                            style={'login-input'}
+                            style={'w-full'}
                             label='Correo electrónico'
                             type='email'
+                            value={email || ''}
+                            onChange={(e) => setEmail(e.target.value)}
                             floatingLabel={true}
                         />
                         <InputField
-                            control={control}
-                            name='password'
-                            style={'login-input'}
+                            style={'w-full'}
                             label='Contraseña'
                             type='password'
+                            value={password || ''}
+                            onChange={(e) => setPassword(e.target.value)}
                             floatingLabel={true}
                         />
-                        <p className='text-right'>
-                            <Link to='/forgotPassword' className='forgetPasswordText'>
-                                ¿Olvidaste tu contraseña?
-                            </Link>
-                        </p>
                         <button type='submit' className='login-btn'>
                             Inicia Sesión
                         </button>
+                        <p className='text-right'>
+                            <a href='/forgot-password' className='text-sm font-bold forgetPasswordText hover:underline'>
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </p>
                     </form>
                 </div>
             </div>
