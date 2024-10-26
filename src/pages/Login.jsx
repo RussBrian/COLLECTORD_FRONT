@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import { InputField } from "../components/ui/InputField.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
 //import { login } from "../services/authUsers.jsx";
-import { Link } from "../components/Link.jsx";
+import { Link, navigate} from "../components/Link.jsx";
 import '../styles/Login.css'
 
 const LoginPage = () => {
@@ -11,21 +11,24 @@ const LoginPage = () => {
     const { dispatch } = useAuth();
 
     const handleLogin = async (data) => {
-
         try {
-            console.log(data)
-            //const data = await login(email, password);
-            dispatch({ type: 'LOGIN_SUCCESS', payload: { user: data.user, role: data.role } });
-            if (data.role === 'institution') {
-                // Redirigir al inicio de una institución
-            } else if (data.role === 'person') {
-                // Redirigir al inicio de una persona
+            console.log(data);
+            // Simular datos de usuario con un rol fijo
+            const simulatedData = { user: { email: data.email }, role: "person" }; // Cambia "person" a "institution" según el rol de prueba
+    
+            dispatch({ type: 'LOGIN_SUCCESS', payload: simulatedData });
+    
+            // Redirige según el rol fijo asignado
+            if (simulatedData.role === 'institution') {
+                navigate('/institutionPage');
+            } else if (simulatedData.role === 'person') {
+                navigate('/personPage');
             }
         } catch (error) {
             console.error('Error en el inicio de sesión', error);
         }
     };
-
+    
     return (
         <div className='login-container'>
             <div className='secondary-container'>
