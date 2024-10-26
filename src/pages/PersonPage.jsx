@@ -33,13 +33,13 @@ const PersonPage = () => {
                         <p className="profile-description">Voluntario</p>
                     </div>
                     <button className="button custom-button">Mi Perfil</button>
-                    <button className="button custom-button">Crear reporte o Voluntariado</button>
-                    <button className="button custom-button">Ver mis reportes o voluntariados de terceros</button>
+                    <button className="button custom-button">Crear Voluntariado</button>
+                    <button className="button custom-button">Ver voluntariados de terceros</button>
                 </div>
                 <strong className="project-name">COLLECTORD</strong>
             </aside>
             <main className="dashboard-content">
-                <label className="title-page">REPORTES</label>
+                <label className="title-page">VOLUNTARIADOS</label>
                 <div className="volunteer-cards-container">
                     {currentCards.map((volunteer) => (
                         <VolunteerCard
