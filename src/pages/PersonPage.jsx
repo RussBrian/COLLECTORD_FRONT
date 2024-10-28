@@ -29,7 +29,7 @@ const PersonPage = () => {
                 <div>
                     <div className="profile-info">
                         <img src="src/images/user-icon.jpg" alt="Perfil" className="profile-image" />
-                        <h2 className="profile-name">John Doe</h2>
+                        <h2 className="profile-name">CollectorRD</h2>
                         <p className="profile-description">Voluntario</p>
                     </div>
                     <button className="button custom-button">Mi Perfil</button>
