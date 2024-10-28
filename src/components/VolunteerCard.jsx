@@ -1,4 +1,5 @@
 // src/components/VolunteerCard.jsx
+import { HiArrowSmallRight } from 'react-icons/hi2';
 import '../styles/VolunteerCard.css';
 
 // eslint-disable-next-line react/prop-types
@@ -17,6 +18,7 @@ const VolunteerCard = ({ title, location, date, image }) => {
                 <div className='button-container'>
                 <button className="card-button">
                     Ver más detalles
+                    <HiArrowSmallRight className='text-2xl ml-4' />
                 </button>
                 </div>
             </div>
