@@ -13,6 +13,10 @@ const NotFoundPage = lazy(() => import('./pages/NotFOundPage.jsx'))
 
 const appRoutes = [
   {
+    path: '/',
+    Component: LazyLoginPage,
+  },
+  {
     path: '/login',
     Component: LazyLoginPage,
   },
@@ -39,6 +43,7 @@ function App() {
     <AuthProvider>
       <Suspense fallback={<div><strong>Cargando...</strong></div>}>
         <Router routes={appRoutes} defaultComponet={NotFoundPage}>
+        <Route path='/' Component={LazyLoginPage}></Route>
           <Route path='/login' Component={LazyLoginPage}></Route>
           <Route path='/registerUser' Component={LazyRegisterUserPage}></Route>
           <Route path='/registerInstitution' Component={LazyRegisterInstitutionPage}></Route>

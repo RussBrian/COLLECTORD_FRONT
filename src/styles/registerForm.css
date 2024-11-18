@@ -10,9 +10,11 @@
 .custom-content-bar {
     @apply h-full bg-green-500 rounded-full;
 }
+
 .back-to-login-btn {
     @apply flex text-left text-gray-300 text-xl font-bold mb-4 mx-auto sm:mx-12 md:mx-2 lg:mx-2 xl:-mx-0;
 }
+
 .main-container {
     @apply flex justify-between items-center h-screen bg-bgUserForm;
 }
@@ -33,6 +35,7 @@
     content: '*';
     @apply text-red-500 mr-1;
 }
+
 .custom-message-required {
     @apply text-textGreen font-bold text-sm pl-2 mx-auto sm:mx-16 md:mx-auto lg:mx-8 mt-10;
 }
