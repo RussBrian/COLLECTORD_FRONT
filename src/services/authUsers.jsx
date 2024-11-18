@@ -1,4 +1,4 @@
-export const login = async (email, password) => {
+export const loginUsers = async (email, password) => {
     const response = await fetch('https://api.example.com/login', {
         method: 'POST',
         headers: {

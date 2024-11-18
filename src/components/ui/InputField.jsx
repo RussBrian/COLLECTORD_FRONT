@@ -42,7 +42,7 @@ export const InputField = ({ label, type, name, control, floatingLabel, style })
                             onChange={handleChange}
                             onFocus={handleFocus}
                             onBlur={handleBlur}
-                            className={`shadow border-2 border-bgNextStepBtn rounded py-3 px-3 w-full leading-tight focus:outline-none text-gray-700 ${style} ${hasValue && floatingLabel ? 'bg-transparent' : 'bg-white'}`}
+                            className={`shadow border-2 border-bgNextStepBtn rounded  py-3 px-3 w-full leading-tight focus:outline-none text-gray-700 ${style} ${hasValue || hasFocus && floatingLabel ? 'bg-transparent text-md font-semibold' : 'bg-white text-md'}`}
                         />
                     );
                 }}
