@@ -1,0 +1,57 @@
+/* src/styles/PersonPage.css */
+.person-page {
+    @apply flex min-h-screen  ;
+}
+.dashboard-content {
+    @apply  w-3/4 lg:w-5/6 xl:w-5/6 p-6 bg-bgUserForm;
+}
+
+.volunteer-cards-container {
+    @apply  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6;
+}
+.title-page {
+    @apply flex flex-col items-center text-2xl font-bold text-white mb-1;
+}
+.sidebar {
+    @apply w-1/4 sm:w-1/4 md:w-1/4 lg:w-1/4 xl:w-1/5 bg-bgAsideDashboard text-white p-6 flex flex-col justify-between;
+}
+
+.profile-info {
+    @apply mb-6 text-center flex flex-col items-center;
+}
+
+.profile-image {
+    @apply w-20 h-20  rounded mb-4;
+}
+
+.profile-name {
+    @apply text-xl font-semibold;
+}
+
+.profile-description {
+    @apply text-sm text-gray-300;
+}
+
+.button {
+    @apply w-full py-4 px-4 rounded mb-4 font-bold text-center;
+}
+
+.custom-button {
+    @apply border border-white text-white hover:bg-bgBackLogin hover:text-white;
+}
+
+.project-name{
+    @apply flex flex-col items-center text-center;
+}
+
+.pagination-controls {
+    @apply flex justify-center items-center mt-6 gap-2;
+}
+
+.pagination-button {
+    @apply bg-gray-300 text-gray-800 py-2 px-4 rounded mx-2 hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.pagination-info {
+    @apply text-gray-700 font-medium;
+}

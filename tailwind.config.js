@@ -16,7 +16,9 @@ export default {
         bgSecondaryBtn: "#4D4D4D",
         bgNextStepBtn: "#7B885B",
         bgBackLogin: "#767572",
-        bgColorLogin: "#D9D9D9F2"
+        bgColorLogin: "#D9D9D9F2",
+        bgAsideDashboard: "#474A42",
+        bgShowDetailsBtn: "#4C673C"
       }
     },
   },

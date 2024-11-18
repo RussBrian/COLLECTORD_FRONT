@@ -1,0 +1,31 @@
+/* src/styles/VolunteerCard.css */
+.volunteer-card {
+    @apply bg-gray-100 w-5/6 sm:w-full md:w-full lg:w-full xl:w-5/6 p-4 rounded-lg shadow-md;
+}
+
+.card-image {
+    @apply w-full h-36  object-cover rounded-md;
+}
+
+.card-title {
+    @apply text-lg font-bold;
+}
+
+.card-location {
+    @apply font-semibold text-sm text-gray-600;
+}
+
+.card-date {
+    @apply font-bold text-sm text-gray-600;
+}
+.date-text {
+    @apply ml-20 sm:ml-2 md:ml-2 lg:ml-6 xl:ml-20; 
+}
+
+.button-container {
+    @apply flex justify-center items-center;
+}
+
+.card-button {
+    @apply flex mt-3 mr-2 bg-bgShowDetailsBtn text-white font-semibold py-2 px-4 rounded-md hover:bg-green-800;
+}
